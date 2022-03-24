@@ -1,0 +1,123 @@
+* {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+*::before, *::after {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+body {
+  font-family: serif;
+  background-color: #333 !important;
+}
+
+body header h1 {
+  font-size: 400%;
+  white-space: nowrap;
+  -webkit-animation: ttlAnimation 1.5s ease;
+          animation: ttlAnimation 1.5s ease;
+}
+
+body main {
+  max-width: 1000px;
+  width: 100%;
+}
+
+body main .contents li {
+  position: relative;
+  list-style-type: none;
+}
+
+body main .contents li:not(:first-of-type) {
+  margin-top: 200px;
+}
+
+body main .contents li:nth-last-of-type(odd) .contentsText {
+  right: 0;
+}
+
+body main .contents li:nth-last-of-type(odd) img {
+  -webkit-transform: translate(-20px, 20px);
+          transform: translate(-20px, 20px);
+}
+
+body main .contents li:nth-last-of-type(even) img {
+  margin-left: auto;
+  -webkit-transform: translate(20px, 20px);
+          transform: translate(20px, 20px);
+}
+
+body main .contents li img {
+  display: block;
+  width: 65%;
+  opacity: 0;
+  -webkit-transition: all 1s .5s ease;
+  transition: all 1s .5s ease;
+}
+
+body main .contents li h2 {
+  opacity: 0;
+  -webkit-transform: translateY(20px);
+          transform: translateY(20px);
+  -webkit-transition: all 1s ease;
+  transition: all 1s ease;
+}
+
+body main .contents li p {
+  opacity: 0;
+  -webkit-transition: all 1s ease;
+  transition: all 1s ease;
+  -webkit-transform: translateY(20px);
+          transform: translateY(20px);
+}
+
+body main .contents li .contentsText {
+  position: absolute;
+  top: 40px;
+}
+
+body main .contents li .contentsText h2 {
+  font-size: 50px;
+  white-space: nowrap;
+  background-color: rgba(20, 20, 20, 0.8);
+  padding: 10px 20px;
+  line-height: 1.4;
+  letter-spacing: .05em;
+}
+
+body main .contents li .contentsText p {
+  line-height: 1.6;
+  background-color: #555;
+  max-width: 340px;
+  font-size: 14px;
+  padding: 15px;
+}
+
+.contents li.show h2,
+.contents li.show p,
+.contents li.show img {
+  opacity: 1;
+  -webkit-transform: none !important;
+          transform: none !important;
+}
+
+@-webkit-keyframes ttlAnimation {
+  0% {
+    letter-spacing: .3em;
+    opacity: 0;
+  }
+  100% {
+  }
+}
+
+@keyframes ttlAnimation {
+  0% {
+    letter-spacing: .3em;
+    opacity: 0;
+  }
+  100% {
+  }
+}
+/*# sourceMappingURL=style.css.map */

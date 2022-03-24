@@ -1,0 +1,103 @@
+@charset "utf-8";
+
+* {
+    box-sizing: border-box;
+    &::before, &::after{
+        box-sizing: border-box;
+    }
+}
+
+body {
+    font-family: serif;
+    background-color: #333 !important;
+    header {
+        h1 {
+            font-size: 400%;
+            white-space: nowrap;
+            animation: ttlAnimation 1.5s ease;
+        }
+    }
+    main {
+        max-width: 1000px;
+        width: 100%;
+        .contents {
+            li {
+                position: relative;
+                list-style-type: none;
+                &:not(:first-of-type){
+                    margin-top: 200px;
+                }
+                &:nth-last-of-type(odd){
+                    .contentsText {
+                        right: 0;
+                    }
+                    img {
+                        transform: translate(-20px,20px);
+                    }
+                }
+                &:nth-last-of-type(even){
+                    img {
+                        margin-left: auto;
+                        transform: translate(20px,20px);
+                    }
+                }
+                img {
+                    display: block;
+                    width: 65%;
+                    opacity: 0;
+                    transition: all 1s .5s ease;
+                }
+                h2 {
+                    opacity: 0;
+                    transform: translateY(20px);
+                    transition: all 1s ease;
+                }
+                p {
+                    opacity: 0;
+                    transition: all 1s ease;
+                    transform: translateY(20px);
+                }
+                .contentsText {
+                    position: absolute;
+                    top: 40px;
+                    h2 {
+                        font-size: 50px;
+                        white-space: nowrap;
+                        background-color: rgba(20,20,20,.8);
+                        padding: 10px 20px;
+                        line-height: 1.4;
+                        letter-spacing: .05em;
+                    }
+                    p {
+                        line-height: 1.6;
+                        background-color: #555;
+                        max-width: 340px;
+                        font-size: 14px;
+                        padding: 15px;
+                    }
+                }
+            }
+        }
+    }
+}
+
+.contents {
+    li {
+        &.show h2,
+        &.show p,
+        &.show img {
+            opacity: 1;
+            transform: none !important;
+        }
+    }
+}
+
+@keyframes ttlAnimation {
+    0% {
+        letter-spacing: .3em;
+        opacity: 0;
+    }
+    100% {
+
+    }
+}
